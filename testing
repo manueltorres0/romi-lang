@@ -1,0 +1,11 @@
+#!/bin/bash
+for file in FinalTests/*-in.ss; do
+        outfile="${file%-in.ss}-out.ss"
+        echo "Testing $(basename "$file"):"
+        echo "Expected: "
+        cat "$outfile"
+        echo
+        echo "Actual: "
+        ./xtr < "$file"
+        echo "---"
+done

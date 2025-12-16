@@ -1,0 +1,15 @@
+(
+ (module main
+   (class C (x)
+     (method test ()
+       (def result 0.0)
+       (def zero 0.0)
+       (if0 zero
+         (block (def temp 5.0) (result = temp))
+         (result = 1.0))
+       result)))
+ (timport main (((x Number)) ((test () Number))))
+ (def val 0.0)
+ (def c (new C (val)))
+ (c --> test ())
+ )
